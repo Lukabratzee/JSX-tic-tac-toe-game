@@ -5,7 +5,7 @@ import './index.css';
 class Square extends React.Component {
     // constructor is a method that's automatically called during the creation of an object from a class.
     constructor(props) {
-    // needs to be called before acessing 'this'. super should always be called when defining the constructor of a subclass.
+    // needs to be called before accessing 'this'. super should always be called when defining the constructor of a subclass.
     // calls constructor of parent class
     // constructor is needed here because we're using setState/modifying the variables. We construct the class, 
     // inherit the constructor from the parent class, and then we can alter variables in the class. 
@@ -23,7 +23,7 @@ class Square extends React.Component {
     toggleState(){
         const isClicked = !this.state.isClicked;
         const value = isClicked ? "X" : "O";
-        const xIsNext = !this.state.xIsNext;
+        const xIsNext = value;
         this.setState({ isClicked, value, xIsNext})
         
     }
@@ -45,7 +45,7 @@ class Square extends React.Component {
         onClick=
         { this.toggleState }>
         {this.state.value}
-        {this.state.xIsNext}
+        
         
         </button>
         // this.state.value/isClicked are then used to ....update?
@@ -81,9 +81,10 @@ class Square extends React.Component {
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
-        squares[i] = <Square xIsNext={this.state.xIsNext ? 'X' : 'O'} />;
-        this.setState({squares: squares})
-        return <Square  xIsNextx={this.state.xIsNext} />;
+        // is this putting the boolean into squares? I think so.
+        squares[i] = <Square xIsNext />;
+        this.setState({squares: squares, xIsNext}) // how do we pull this out of the class and use it here?
+         
 
     }
     renderSquare(i) {
