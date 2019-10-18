@@ -23,7 +23,8 @@ class Square extends React.Component {
     toggleState(){
         const isClicked = !this.state.isClicked;
         const value = isClicked ? "X" : "O";
-        this.setState({ isClicked, value, xIsNext: !this.state.xIsNext})
+        const xIsNext = !this.state.xIsNext;
+        this.setState({ isClicked, value, xIsNext})
         
     }
   
@@ -44,7 +45,7 @@ class Square extends React.Component {
         onClick=
         { this.toggleState }>
         {this.state.value}
-        {this.state.isClicked}
+        {this.state.xIsNext}
         
         </button>
         // this.state.value/isClicked are then used to ....update?
