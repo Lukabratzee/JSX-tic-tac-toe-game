@@ -83,7 +83,7 @@ class Square extends React.Component {
         }
         // is this putting the boolean into squares? I think so.
         squares[i] = <Square xIsNext />;
-        this.setState({squares: squares, xIsNext}) // how do we pull this out of the class and use it here?
+        this.setState({squares: squares}) // how do we pull this out of the class and use it here?
          
 
     }
@@ -98,7 +98,7 @@ class Square extends React.Component {
         if (winner) {
           status = 'Winner: ' + winner;
         } else {
-        status = 'Next player: ' + <Square  xIsNext={this.state.xIsNext ? 'X' : 'O'} />;
+        status = 'Next player: ' + <Square  xIsNext={this.state.squares ? 'X' : 'O'} />; // how do we pull this out of the class and use it here?
 
       return (
         <div>
