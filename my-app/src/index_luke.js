@@ -31,15 +31,15 @@ class Square extends React.Component {
     render() {
       return (
             // () => passes function as a property. In this case, on each click, alert is fired
-            // if the function was not being passed, it would fire everytime the component re-rendered
-            // the funtion is called, literally, onclick, rather than not being told and just being called when it's created.
+            // if the function was not being passed, it would fire every time the component re-rendered
+            // the function is called, literally, onclick, rather than not being told and just being called when it's created.
             // so by passing function using attributes and the resulting props, we can control when things happen based on context
         <button
           className="square"
           //   onClick={() => this.setState({value: 'X'})}
 
           // so we either pass an onclick function into setState,
-          // or we incorproate setState and the other variables into
+          // or we incorporate setState and the other variables into
           // a function that we can call using onClick={this.toggleState}
           // a function pressed when a button is hit!
         onClick=
