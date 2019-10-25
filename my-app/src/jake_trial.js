@@ -173,13 +173,13 @@ Solve this and you'll make leaps at solving the initial problem. */
 }
 
 // The cookie DISPLAYS BUT DOES NOT CONTAIN HOW MANY TIMES IT HAS BEEN CLICKED.
-function cookie(props) {
-	var xView = null;
-	xView = container(xView);
+function cookie(xClicked) {
+  
+	xView = container(xClicked);
 }
 
 // The container CONTAINS BUT DOES NOT DISPLAY HOW MANY TIMES THE COOKIE HAS BEEN CLICKED.
-function container(props) {
+function container() {
 	var xClicked = null;
 
 	xClicked = isNaN(xClicked) ? 0 : xClicked;
@@ -188,6 +188,6 @@ function container(props) {
 	return xClicked;
 }
 
-<button onClick={this.toggleState} />;
+<button onClick={cookie(xClicked)}/>;
 
 // I need cookie to know how many time it has been clicked, but IT can not store it. Container needs to store it, and pass it to cookie
