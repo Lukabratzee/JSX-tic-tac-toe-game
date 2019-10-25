@@ -1,4 +1,5 @@
-{/* # Fixing notes
+{
+	/* # Fixing notes
 ## What
 These are a bunch of notes left by Jake, on future additions / changes that should be made to the project.
  
@@ -168,55 +169,25 @@ Cookie is rendered by Container.
 Container contains, in it's state, how many times the cookie has been clicked.
 Cookie displays that value, but does not hold it in it's own state. It only accesses it through props.
  
-Solve this and you'll make leaps at solving the initial problem. */}
-
-class Container extends React.Component {
-
-    constructor(props) {
-
-      super(props);
-      this.state = {
-        clicked: null,
-        view: null,
-      };
-
-      this.toggleState = this.containerClickState.bind(this);
-      this.toggleState = this.cookieViewState.bind(this);
-
-      // this is incrementing the variable 'clicked'
-    containerClickState() ;
-     const clicked = this.state.clicked++;
-     this.setState({clicked})
-
-    cookieViewState() ;
-    const view = clicked;
-    this.setState({view})
+Solve this and you'll make leaps at solving the initial problem. */
 }
 
-
-render() {
-      return (
-        <button
-          className="container"
-
-        onClick=
-        { this.containerClickState }>
-        <h1>The count is {props.cookieViewState}</h1>;
-        {this.state.clicked}
-        </button>
-
-      );
-    }
-
+// The cookie DISPLAYS BUT DOES NOT CONTAIN HOW MANY TIMES IT HAS BEEN CLICKED.
+function cookie(props) {
+	var xView = null;
+	xView = container(xView);
 }
 
+// The container CONTAINS BUT DOES NOT DISPLAY HOW MANY TIMES THE COOKIE HAS BEEN CLICKED.
+function container(props) {
+	var xClicked = null;
 
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+	xClicked = isNaN(xClicked) ? 0 : xClicked;
+	xClicked++;
+
+	return xClicked;
 }
 
-const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+<button onClick={this.toggleState} />;
+
+// I need cookie to know how many time it has been clicked, but IT can not store it. Container needs to store it, and pass it to cookie
