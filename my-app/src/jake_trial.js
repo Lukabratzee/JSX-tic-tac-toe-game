@@ -172,10 +172,16 @@ Cookie displays that value, but does not hold it in it's own state. It only acce
 Solve this and you'll make leaps at solving the initial problem. */
 }
 
+//////////////////////////////////////
+
+
+<input id="demo" type="button" value="clickme" onclick="cookie(xClicked);"/>
+
 // The cookie DISPLAYS BUT DOES NOT CONTAIN HOW MANY TIMES IT HAS BEEN CLICKED.
 function cookie(xClicked) {
   
 	xView = container(xClicked);
+    return xView
 }
 
 // The container CONTAINS BUT DOES NOT DISPLAY HOW MANY TIMES THE COOKIE HAS BEEN CLICKED.
@@ -188,6 +194,6 @@ function container() {
 	return xClicked;
 }
 
-<button onClick={cookie(xClicked)}/>;
+onClick={cookie(xClicked)
+}
 
-// I need cookie to know how many time it has been clicked, but IT can not store it. Container needs to store it, and pass it to cookie
